@@ -28,6 +28,10 @@ public class Habilidad {
         this.tipoHabilidad = h1.getTipoHabilidad();
     }
 
+    public Habilidad(){
+
+    }
+
     public int getId() {
         return id;
     }

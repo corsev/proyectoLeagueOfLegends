@@ -1,0 +1,7 @@
+id,id_personaje,nombre,danio_base,coste_mana,tipo
+1,1,disparo arcano,100,20,DANIO
+2,1,onda certera,500,100,DANIO
+3,2,enlace de luz,120,60,DANIO
+4,2,singularidad brillante,300,80,DANIO
+5,10,dardo cegador,90,60,DANIO
+6,10,seta venenosa,200,90,DANIO

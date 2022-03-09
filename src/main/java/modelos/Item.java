@@ -28,6 +28,10 @@ public class Item {
         this.aumentoMana = i1.getAumentoMana();
     }
 
+    public Item() {
+
+    }
+
     public int getId() {
         return id;
     }
