@@ -11,10 +11,10 @@ import java.util.Map;
 import java.util.Random;
 
 public interface IUtilidadesPartida {
-      void inicializarPartida(Partida partida, List<Jugador>
-             participantes, List<Personaje> personajesDisponibles);
+    void inicializarPartida(Partida partida, List<Jugador>
+            participantes, List<Personaje> personajesDisponibles);
 
-        void finalizarPartida(Partida partida, Integer equipoVencedor);
+    void finalizarPartida(Partida partida, Integer equipoVencedor);
 
 
 }

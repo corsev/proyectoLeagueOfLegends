@@ -72,22 +72,31 @@ public class UtilidadesPartida implements IUtilidadesPartida{
         //Obtenemos la duracion total de la partida en segundos
         duracionPartida(partida);
 
+        // Añadimos al equipo vencedor el parametro que le pasamos
+        equipoVencedorParametro(partida, equipoVencedor);
 
-        partida.setEquipoVencedor(equipoVencedor);
+        // Actualiza las stats de los jugadores del equipo ganador
+        actualizaPartidaGanada(partida, equipoVencedor);
 
 
-        Map<Integer, Set<Jugador>> jugadores = partida.getJugadoresPorEquipo();
+    }
 
+    private void actualizaPartidaGanada(Partida partida, Integer equipoVencedor) {
+        Set<Jugador> ganadores = partida.getJugadoresPorEquipo().get(equipoVencedor);
 
-        for (Jugador j1 : partida.getJugadoresPorEquipo().get(equipoVencedor)){
+        for (Jugador j1 : ganadores){
+            Personaje p1 = partida.getElecciones().get(j1);
+            if (!Objects.equals(p1, partida.getElecciones())){
+                j1.getPartidasGanadas().put(p1, 1);
 
+            }
+            else
+                j1.getPartidasGanadas().put(p1,+1);
         }
+    }
 
-
-
-
-
-
+    private void equipoVencedorParametro(Partida partida, Integer equipoVencedor) {
+        partida.setEquipoVencedor(equipoVencedor);
     }
 
     private void duracionPartida(Partida partida) {
