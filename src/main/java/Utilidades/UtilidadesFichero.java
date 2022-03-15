@@ -24,7 +24,7 @@ public class UtilidadesFichero {
         List<Personaje> listaFinal = new ArrayList<>();
         CSVReader reader = null;
         try {
-            reader = new CSVReader(new FileReader("C:\\Users\\dragu\\Desktop\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\personajes.csv"), SEPARATOR);
+            reader = new CSVReader(new FileReader("C:\\Users\\daw20\\IdeaProjects\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\personajes.csv"), SEPARATOR);
             String[] nextline = null;
             int count = 0;
 
@@ -65,7 +65,7 @@ public class UtilidadesFichero {
 
         CSVReader reader = null;
         try {
-            reader = new CSVReader(new FileReader("C:\\Users\\dragu\\Desktop\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\habilidades.csv"), SEPARATOR);
+            reader = new CSVReader(new FileReader("C:\\Users\\daw20\\IdeaProjects\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\habilidades.csv"), SEPARATOR);
             String[] nextline = null;
             int count = 0;
 
@@ -104,7 +104,7 @@ public class UtilidadesFichero {
         List<Item> listaItems = new ArrayList<>();
         CSVReader reader = null;
         try {
-            reader = new CSVReader(new FileReader("C:\\Users\\dragu\\Desktop\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\personajes.csv"), SEPARATOR);
+            reader = new CSVReader(new FileReader("C:\\Users\\daw20\\IdeaProjects\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\personajes.csv"), SEPARATOR);
             String[] nextline = null;
             int count = 0;
 

@@ -169,19 +169,47 @@ public class UtilidadesPersonaje {
         Personaje personaje10 = getMasPoderoso(l10);
         Personaje personaje11 = getMasPoderoso(l11);
 
-        lista_personaje_poderoso.add(personaje1);
-        lista_personaje_poderoso.add(personaje2);
-        lista_personaje_poderoso.add(personaje3);
-        lista_personaje_poderoso.add(personaje4);
-        lista_personaje_poderoso.add(personaje5);
-        lista_personaje_poderoso.add(personaje6);
-        lista_personaje_poderoso.add(personaje7);
-        lista_personaje_poderoso.add(personaje8);
-        lista_personaje_poderoso.add(personaje9);
-        lista_personaje_poderoso.add(personaje10);
-        lista_personaje_poderoso.add(personaje11);
+        l1.clear();
+        l2.clear();
+        l3.clear();
+        l4.clear();
+        l5.clear();
+        l6.clear();
+        l7.clear();
+        l8.clear();
+        l9.clear();
+        l10.clear();
+        l11.clear();
 
-        poderoso_por_region = getPersonajesPorRegion(lista_personaje_poderoso);
+
+
+
+        l1.add(personaje1);
+        l2.add(personaje2);
+        l3.add(personaje3);
+        l4.add(personaje4);
+        l5.add(personaje5);
+        l6.add(personaje6);
+        l7.add(personaje7);
+        l8.add(personaje8);
+        l9.add(personaje9);
+        l10.add(personaje10);
+        l11.add(personaje11);
+
+        poderoso_por_region.put(Region.DEMACIA, l1);
+        poderoso_por_region.put(Region.DESCONOCIDA, l2);
+        poderoso_por_region.put(Region.AGUAS_ESTANCADAS, l3);
+        poderoso_por_region.put(Region.BANDLE, l4);
+        poderoso_por_region.put(Region.FREIJORD, l5);
+        poderoso_por_region.put(Region.JONIA, l6);
+        poderoso_por_region.put(Region.NOXUS, l7);
+        poderoso_por_region.put(Region.PILTOVER, l8);
+        poderoso_por_region.put(Region.SHURIMA, l9);
+        poderoso_por_region.put(Region.TARGON, l10);
+        poderoso_por_region.put(Region.ZAUM, l11);
+
+
+
 
 
 
