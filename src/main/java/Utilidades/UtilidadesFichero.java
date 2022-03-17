@@ -104,7 +104,7 @@ public class UtilidadesFichero {
         List<Item> listaItems = new ArrayList<>();
         CSVReader reader = null;
         try {
-            reader = new CSVReader(new FileReader("C:\\Users\\daw20\\IdeaProjects\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\personajes.csv"), SEPARATOR);
+            reader = new CSVReader(new FileReader("C:\\Users\\daw20\\IdeaProjects\\proyectoLeagueOfLegends\\src\\main\\java\\documentos\\items.csv"), SEPARATOR);
             String[] nextline = null;
             int count = 0;
 
@@ -115,10 +115,10 @@ public class UtilidadesFichero {
                     Item i = new Item();
                     i.setId(Integer.parseInt(valores[0]));
                     i.setNombre(valores[1]);
-                    i.setaumentoDanio(Double.parseDouble(valores[2]));
-                    i.setAumentoDefensa(Double.parseDouble(valores[3]));
-                    i.setAumentoSalud(Double.parseDouble(valores[4]));
-                    i.setAumentoMana(Double.parseDouble(valores[5]));
+                    i.setaumentoDanio(Double.valueOf(valores[2]));
+                    i.setAumentoDefensa(Double.valueOf(valores[3]));
+                    i.setAumentoSalud(Double.valueOf(valores[4]));
+                    i.setAumentoMana(Double.valueOf(valores[5]));
                     listaItems.add(i);
                 }
                 count++;
