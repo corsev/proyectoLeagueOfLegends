@@ -10,8 +10,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class UtilidadesPartida implements IUtilidadesPartida{
-    public void inicializarPartida(Partida partida, List<Jugador>
+public class UtilidadesPartida {
+
+    public static void inicializarPartida(Partida partida, List<Jugador>
             participantes, List<Personaje> personajesDisponibles){
 
 
@@ -27,11 +28,11 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
     }
 
-    private void horaInicioPartida(Partida partida) {
-        partida.setIniciPartida(LocalDateTime.now());
+    private static void horaInicioPartida(Partida partida) {
+        partida.setInicioPartida(LocalDateTime.now());
     }
 
-    private void EleccionJugadoresEquipo(Partida partida, List<Jugador> participantes) {
+    private static void EleccionJugadoresEquipo(Partida partida, List<Jugador> participantes) {
         Set<Jugador> set1 = new HashSet<>();
         Set<Jugador> set2 = new HashSet<>();
 
@@ -48,7 +49,7 @@ public class UtilidadesPartida implements IUtilidadesPartida{
         }
     }
 
-    private void inicializarElecciones(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles) {
+    private static void inicializarElecciones(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles) {
         Personaje personajeFavorito;
 
         for (Jugador j1: participantes){
@@ -66,7 +67,7 @@ public class UtilidadesPartida implements IUtilidadesPartida{
     }
 
 
-    public void finalizarPartida(Partida partida, Integer equipoVencedor){
+    public static void finalizarPartida(Partida partida, Integer equipoVencedor){
 
 
         //Obtenemos la duracion total de la partida en segundos
@@ -81,7 +82,7 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
     }
 
-    private void actualizaPartidaGanada(Partida partida, Integer equipoVencedor) {
+    private static void actualizaPartidaGanada(Partida partida, Integer equipoVencedor) {
         Set<Jugador> ganadores = partida.getJugadoresPorEquipo().get(equipoVencedor);
 
         for (Jugador j1 : ganadores){
@@ -95,14 +96,14 @@ public class UtilidadesPartida implements IUtilidadesPartida{
         }
     }
 
-    private void equipoVencedorParametro(Partida partida, Integer equipoVencedor) {
+    private static void equipoVencedorParametro(Partida partida, Integer equipoVencedor) {
         partida.setEquipoVencedor(equipoVencedor);
     }
 
-    private void duracionPartida(Partida partida) {
+    private static void duracionPartida(Partida partida) {
         partida.setFinPartida(LocalDateTime.now());
 
-        LocalDateTime inicio = partida.getIniciPartida();
+        LocalDateTime inicio = partida.getInicioPartida();
         LocalDateTime fin = partida.getFinPartida();
 
         int duracion = fin.getSecond() - inicio.getSecond();

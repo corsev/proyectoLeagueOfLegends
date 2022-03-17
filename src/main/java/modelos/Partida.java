@@ -11,7 +11,7 @@ public class Partida {
     private Double server;
     Map<Jugador,Personaje> elecciones;
     Map<Integer, Set<Jugador>> jugadoresPorEquipo;
-    private LocalDateTime iniciPartida;
+    private LocalDateTime inicioPartida;
     private LocalDateTime finPartida;
     private int duracionPartida;
     private Integer equipoVencedor;
@@ -23,7 +23,7 @@ public class Partida {
         this.server = server;
         this.elecciones = elecciones;
         this.jugadoresPorEquipo = jugadoresPorEquipo;
-        this.iniciPartida = iniciPartida;
+        this.inicioPartida = iniciPartida;
         this.finPartida = finPartida;
         this.duracionPartida = duracionPartida;
         this.equipoVencedor = equipoVencedor;
@@ -36,7 +36,7 @@ public class Partida {
         this.server = p1.getServer();
         this.elecciones = p1.getElecciones();
         this.jugadoresPorEquipo = p1.getJugadoresPorEquipo();
-        this.iniciPartida = p1.getIniciPartida();
+        this.inicioPartida = p1.getInicioPartida();
         this.finPartida = p1.getFinPartida();
         this.duracionPartida = p1.getDuracionPartida();
         this.equipoVencedor = p1.getEquipoVencedor();
@@ -87,12 +87,12 @@ public class Partida {
         this.jugadoresPorEquipo = jugadoresPorEquipo;
     }
 
-    public LocalDateTime getIniciPartida() {
-        return iniciPartida;
+    public LocalDateTime getInicioPartida() {
+        return inicioPartida;
     }
 
-    public void setIniciPartida(LocalDateTime iniciPartida) {
-        this.iniciPartida = iniciPartida;
+    public void setInicioPartida(LocalDateTime iniciPartida) {
+        this.inicioPartida = iniciPartida;
     }
 
     public LocalDateTime getFinPartida() {
@@ -124,12 +124,12 @@ public class Partida {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Partida partida = (Partida) o;
-        return id == partida.id && duracionPartida == partida.duracionPartida && Objects.equals(codigo, partida.codigo) && Objects.equals(server, partida.server) && Objects.equals(elecciones, partida.elecciones) && Objects.equals(jugadoresPorEquipo, partida.jugadoresPorEquipo) && Objects.equals(iniciPartida, partida.iniciPartida) && Objects.equals(finPartida, partida.finPartida) && Objects.equals(equipoVencedor, partida.equipoVencedor);
+        return id == partida.id && duracionPartida == partida.duracionPartida && Objects.equals(codigo, partida.codigo) && Objects.equals(server, partida.server) && Objects.equals(elecciones, partida.elecciones) && Objects.equals(jugadoresPorEquipo, partida.jugadoresPorEquipo) && Objects.equals(inicioPartida, partida.inicioPartida) && Objects.equals(finPartida, partida.finPartida) && Objects.equals(equipoVencedor, partida.equipoVencedor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, codigo, server, elecciones, jugadoresPorEquipo, iniciPartida, finPartida, duracionPartida, equipoVencedor);
+        return Objects.hash(id, codigo, server, elecciones, jugadoresPorEquipo, inicioPartida, finPartida, duracionPartida, equipoVencedor);
     }
 
     @Override
@@ -140,7 +140,7 @@ public class Partida {
                 ", server=" + server +
                 ", elecciones=" + elecciones +
                 ", jugadoresPorEquipo=" + jugadoresPorEquipo +
-                ", iniciPartida=" + iniciPartida +
+                ", iniciPartida=" + inicioPartida +
                 ", finPartida=" + finPartida +
                 ", duracionPartida=" + duracionPartida +
                 ", equipoVencedor=" + equipoVencedor +

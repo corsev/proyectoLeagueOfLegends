@@ -35,7 +35,7 @@ public class UtilidadesFichero {
                     Personaje p = new Personaje();
                     p.setId(Integer.parseInt(valores[0]));
                     p.setNombre(valores[1]);
-                    p.setFechaCreacion(LocalDate.parse(valores[2]));
+                    p.setFechaCreacion(LocalDate.parse(valores[2],DateTimeFormatter.ofPattern("dd/MM/yyyy")));
                     p.setAtaqueBase(Double.valueOf(valores[3]));
                     p.setDefensaBase(Double.valueOf(valores[4]));
                     p.setVidaBase(Double.valueOf(valores[5]));
@@ -56,7 +56,7 @@ public class UtilidadesFichero {
         return listaFinal;
     }
 
-    public List<Personaje> leerYAprenderHabilidades() throws IOException {
+    public static List<Personaje> leerYAprenderHabilidades() throws IOException {
         List<Personaje> listaFinal = new ArrayList<>();
         List<Personaje> listaPersonaje = leerPersonajes();
         List<Habilidad> listaHabilidad = new ArrayList<>();
@@ -100,7 +100,7 @@ public class UtilidadesFichero {
 
         return listaFinal;
     }
-    public List<Item> leerItems() throws IOException {
+    public static List<Item> leerItems() throws IOException {
         List<Item> listaItems = new ArrayList<>();
         CSVReader reader = null;
         try {
@@ -115,10 +115,10 @@ public class UtilidadesFichero {
                     Item i = new Item();
                     i.setId(Integer.parseInt(valores[0]));
                     i.setNombre(valores[1]);
-                    i.setaumentoDanio(Double.valueOf(valores[2]));
-                    i.setAumentoDefensa(Double.valueOf(valores[3]));
-                    i.setAumentoSalud(Double.valueOf(valores[4]));
-                    i.setAumentoMana(Double.valueOf(valores[5]));
+                    i.setaumentoDanio(Double.parseDouble(valores[2]));
+                    i.setAumentoDefensa(Double.parseDouble(valores[3]));
+                    i.setAumentoSalud(Double.parseDouble(valores[4]));
+                    i.setAumentoMana(Double.parseDouble(valores[5]));
                     listaItems.add(i);
                 }
                 count++;

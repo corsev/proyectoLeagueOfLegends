@@ -47,7 +47,7 @@ public class UtilidadesHabilidad {
         return personaje;
     }
 
-    public void equiparItem(Personaje personaje, Item item){
+    public static void equiparItem(Personaje personaje, Item item){
         List<Item> i = personaje.getEquipamiento();
         i.add(item);
 
@@ -58,8 +58,8 @@ public class UtilidadesHabilidad {
 
     }
 
-    public void golpearConHabilidad(Personaje emisor, Personaje receptor,
-                                    Habilidad habilidadEmisor){
+    public static void golpearConHabilidad(Personaje emisor, Personaje receptor,
+                                           Habilidad habilidadEmisor){
 
 
 

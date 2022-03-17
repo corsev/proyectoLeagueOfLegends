@@ -64,6 +64,7 @@ public class UtilidadesPersonaje {
         Map<Personaje, Double> Personaje_valores_totales = new HashMap<>();
 
         for (Personaje personaje1 : personaje){
+
             if (personaje1.getNivel() < 18 ){
                 levelUp(personaje1);
             }
@@ -91,7 +92,7 @@ public class UtilidadesPersonaje {
         return personaje_final;
     }
 
-    public Map<Region, List<Personaje>> getMasPoderosoPorRegion(List<Personaje> personajes){
+    public static Map<Region, List<Personaje>> getMasPoderosoPorRegion(List<Personaje> personajes){
         Map<Region, List<Personaje>> poderoso_por_region = new HashMap<>();
         List<Personaje> l1 = new ArrayList<>();
         List<Personaje> l2 = new ArrayList<>();
@@ -206,7 +207,7 @@ public class UtilidadesPersonaje {
         poderoso_por_region.put(Region.PILTOVER, l8);
         poderoso_por_region.put(Region.SHURIMA, l9);
         poderoso_por_region.put(Region.TARGON, l10);
-        poderoso_por_region.put(Region.ZAUM, l11);
+        poderoso_por_region.put(Region.ZAUN, l11);
 
 
 

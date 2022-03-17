@@ -41,7 +41,7 @@ public class Personaje {
         this.ataque = ataque;
         this.vida = vida;
         this.mana = mana;
-        Region = region;
+        this.Region = region;
         this.habilidades = habilidades;
         this.equipamiento = equipamiento;
         this.escalabilidad = escalabilidad;
@@ -178,9 +178,7 @@ public class Personaje {
         return Region;
     }
 
-    public void setRegion(Region region) {
-        Region = region;
-    }
+    public void setRegion(Region region) { this.Region = region; }
 
     public List<Habilidad> getHabilidades() {
         return habilidades;
