@@ -30,7 +30,7 @@ public class PruebaMetodos {
         Personaje p = new Personaje(1,"Lux", "Campeona de luz", LocalDate.now(), 0, 100D, 100D,
                 100D, 100D, 100D, 100D, 100D, 100D, Region.DEMACIA, new ArrayList<>(), new ArrayList<>(), null);
         Personaje p2 = new Personaje(2,"Ezreal", "El Explorador", LocalDate.now(), 0, 0D, 0D,
-                0D, 0D, 105D, 105D, 105D, 105D, Region.PILTOVER, new ArrayList<>(), new ArrayList<>(), null);
+                105D, 105D, 105D, 105D, 105D, 105D, Region.PILTOVER, new ArrayList<>(), new ArrayList<>(), null);
         Personaje p3 = new Personaje(3,"Sion", "Titán", LocalDate.now(), 0, 0D, 0D,
                 0D, 0D, 140D, 140D, 140D, 140D, Region.NOXUS, new ArrayList<>(), new ArrayList<>(), null);
         Personaje p4 = new Personaje(4,"Miss Fortune", "Pistolas", LocalDate.now(), 0, 0D, 0D,

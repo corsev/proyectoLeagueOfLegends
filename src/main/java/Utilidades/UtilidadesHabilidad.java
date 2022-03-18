@@ -105,7 +105,7 @@ public class UtilidadesHabilidad {
 
             emisor.setMana(emisor.getMana() - habilidadEmisor.getCosteMana());
 
-            receptor.setVida(receptor.getVida() - habilidadEmisor.getdanioBase());
+            receptor.setVida(receptor.getVida() - DanioHabilidadTotal);
 
     }
 

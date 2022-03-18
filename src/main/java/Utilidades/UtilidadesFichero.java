@@ -57,7 +57,7 @@ public class UtilidadesFichero {
     }
 
     public static List<Personaje> leerYAprenderHabilidades() throws IOException {
-        List<Personaje> listaFinal = new ArrayList<>();
+
         List<Personaje> listaPersonaje = leerPersonajes();
         List<Habilidad> listaHabilidad = new ArrayList<>();
         Habilidad h = new Habilidad();
@@ -74,20 +74,36 @@ public class UtilidadesFichero {
                 if (count > 0) {
                     String[] valores = nextline;
                     h.setId(Integer.parseInt(valores[0]));
-                    int id_personaje = Integer.parseInt(valores[1]);
                     h.setNombre(valores[2]);
-                    h.setdanioBase(Double.valueOf(valores[3]));
-                    h.setCosteMana(Double.valueOf(valores[4]));
+                    h.setdanioBase(Double.parseDouble(valores[3]));
+                    h.setCosteMana(Double.parseDouble(valores[4]));
                     h.setTipoHabilidad(TipoHabilidad.valueOf(valores[5]));
+
                     listaHabilidad.add(h);
-                    for (Personaje p : listaPersonaje) {
-                        if (p.getId() == id_personaje) {
-                            p.setHabilidades(listaHabilidad);
-                            listaFinal.add(p);
-                        } else listaFinal.add(p);
-                        count++;
+
+                    List<Habilidad> nuevah = new ArrayList<>();
+                    nuevah.add(h);
+
+                    for (Personaje p : listaPersonaje){
+                        if (Integer.parseInt(valores[1]) == p.getId()){
+                            if(p.getHabilidades() != null){
+                                List<Habilidad> hab = new ArrayList<>();
+
+                            for (Habilidad h1 : p.getHabilidades()) {
+                                hab.add(h1);
+                            }
+                                hab.add(h);
+                                p.setHabilidades(hab);
+                            }
+                            else{
+                                p.setHabilidades(nuevah);
+                            }
+                        }
                     }
+                        nuevah = null;
                 }
+
+                count++;
 
 
             }
@@ -98,7 +114,7 @@ public class UtilidadesFichero {
 
         reader.close();
 
-        return listaFinal;
+        return listaPersonaje;
     }
     public static List<Item> leerItems() throws IOException {
         List<Item> listaItems = new ArrayList<>();
