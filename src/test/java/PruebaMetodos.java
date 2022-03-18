@@ -156,7 +156,7 @@ public class PruebaMetodos {
         List<Personaje> masPoderosoObtenido = personajesPoderososPorRegion.get(Region.AGUAS_ESTANCADAS);
 
         assertEquals(regionesDelMapa, regionesEsperadas);
-        assertEquals(masPoderosoEsperado,masPoderosoObtenido);
+        assertEquals(masPoderosoEsperado,masPoderosoObtenido.get(0));
     }
 
 

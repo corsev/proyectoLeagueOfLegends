@@ -65,11 +65,14 @@ public class UtilidadesPersonaje {
 
         for (Personaje personaje1 : personaje){
 
-            if (personaje1.getNivel() < 18 ){
+
+            while (personaje1.getNivel() < 18 ){
                 levelUp(personaje1);
             }
-            else
-            levelDown(personaje1);
+
+             while (personaje1.getNivel() > 18 ){
+                levelDown(personaje1);
+            }
         }
 
         for (Personaje personaje1 : personaje){
@@ -81,7 +84,13 @@ public class UtilidadesPersonaje {
             // personaje_final -> personaje1
             //poder_del_mas_poderoso -> pesonaje_sumado
 
-            if (personaje_sumado > poder_del_mas_poderoso){
+            if (personaje_final.getNombre() == null){
+                personaje_final = personaje1;
+            }
+
+
+            if (personaje_sumado > (personaje_final.getAtaque() + personaje_final.getVida() + personaje_final.getDefensa() + personaje_final.getMana()))
+            {
                 personaje_final = personaje1;
             }
             else
@@ -106,7 +115,7 @@ public class UtilidadesPersonaje {
         List<Personaje> l10 = new ArrayList<>();
         List<Personaje> l11 = new ArrayList<>();
 
-        List<Personaje> lista_personaje_poderoso = new ArrayList<>();
+
 
 
 
@@ -197,17 +206,40 @@ public class UtilidadesPersonaje {
         l10.add(personaje10);
         l11.add(personaje11);
 
-        poderoso_por_region.put(Region.DEMACIA, l1);
-        poderoso_por_region.put(Region.DESCONOCIDA, l2);
-        poderoso_por_region.put(Region.AGUAS_ESTANCADAS, l3);
-        poderoso_por_region.put(Region.BANDLE, l4);
-        poderoso_por_region.put(Region.FREIJORD, l5);
-        poderoso_por_region.put(Region.JONIA, l6);
-        poderoso_por_region.put(Region.NOXUS, l7);
-        poderoso_por_region.put(Region.PILTOVER, l8);
-        poderoso_por_region.put(Region.SHURIMA, l9);
-        poderoso_por_region.put(Region.TARGON, l10);
-        poderoso_por_region.put(Region.ZAUN, l11);
+        if (personaje1.getNombre() != null) {
+            poderoso_por_region.put(Region.DEMACIA, l1);
+        }
+        if (personaje2.getNombre() != null) {
+            poderoso_por_region.put(Region.DESCONOCIDA, l2);
+        }
+        if (personaje3.getNombre() != null) {
+            poderoso_por_region.put(Region.AGUAS_ESTANCADAS, l3);
+        }
+        if (personaje4.getNombre() != null) {
+            poderoso_por_region.put(Region.BANDLE, l4);
+        }
+        if (personaje5.getNombre() != null) {
+            poderoso_por_region.put(Region.FREIJORD, l5);
+        }
+        if (personaje6.getNombre() != null) {
+            poderoso_por_region.put(Region.JONIA, l6);
+        }
+        if (personaje7.getNombre() != null) {
+            poderoso_por_region.put(Region.NOXUS, l7);
+        }
+        if (personaje8.getNombre() != null) {
+            poderoso_por_region.put(Region.PILTOVER, l8);
+        }
+        if (personaje9.getNombre() != null) {
+            poderoso_por_region.put(Region.SHURIMA, l9);
+        }
+        if (personaje10.getNombre() != null) {
+            poderoso_por_region.put(Region.TARGON, l10);
+        }
+        if (personaje11.getNombre() != null) {
+            poderoso_por_region.put(Region.ZAUN, l11);
+        }
+
 
 
 

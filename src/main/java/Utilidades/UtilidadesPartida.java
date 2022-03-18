@@ -16,6 +16,7 @@ public class UtilidadesPartida {
             participantes, List<Personaje> personajesDisponibles){
 
 
+
         //Aqui se incializan las elecciones de los personajes
         inicializarElecciones(partida, participantes, personajesDisponibles);
 
@@ -36,34 +37,38 @@ public class UtilidadesPartida {
         Set<Jugador> set1 = new HashSet<>();
         Set<Jugador> set2 = new HashSet<>();
 
-        if (participantes.size() % 2 ==0){
-            for (Jugador j1 : participantes){
-                if (set1.size() == (participantes.size()%2)){
+        if (participantes.size() % 2 == 0) {
+            for (Jugador j1 : participantes) {
+                if (set1.size() == (participantes.size() % 2)) {
                     set1.add(j1);
-                }else
+                } else
                     set2.add(j1);
             }
-            partida.getJugadoresPorEquipo().put(1,set1);
-            partida.getJugadoresPorEquipo().put(2,set2);
+            partida.getJugadoresPorEquipo().put(1, set1);
+            partida.getJugadoresPorEquipo().put(2, set2);
 
         }
+
     }
 
     private static void inicializarElecciones(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles) {
         Personaje personajeFavorito;
 
-        for (Jugador j1: participantes){
-            for (Personaje p1 : personajesDisponibles){
-                if (j1.getPersonajesFavoritos().equals(p1)){
-                    personajeFavorito = (Personaje) j1.getPersonajesFavoritos();
-                    partida.getElecciones().put(j1, personajeFavorito);
+        Map<Jugador, Personaje> mapa1 = partida.getElecciones();
+
+        for (Jugador j1 : participantes) {
+            for (Personaje p1 : personajesDisponibles) {
+                if (((Personaje) j1.getPersonajesFavoritos().toArray()[0]).getNombre().equals(p1.getNombre())) {
+
+                    mapa1.put(j1, p1);
                     personajesDisponibles.remove(p1);
-                }
-                else
-                    partida.getElecciones().put(j1,p1);
-                    personajesDisponibles.remove(p1);
+                } else
+                    partida.getElecciones().put(j1, p1);
+                personajesDisponibles.remove(p1);
             }
+
         }
+
     }
 
 
@@ -76,7 +81,7 @@ public class UtilidadesPartida {
         // Añadimos al equipo vencedor el parametro que le pasamos
         equipoVencedorParametro(partida, equipoVencedor);
 
-        // Actualiza las stats de los jugadores del equipo ganador
+        // Actualiza las stats de los jugadores del equipo ganador.
         actualizaPartidaGanada(partida, equipoVencedor);
 
 
