@@ -4,6 +4,7 @@ import modelos.Habilidad;
 import modelos.Item;
 import modelos.Personaje;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UtilidadesHabilidad {
@@ -62,24 +63,36 @@ public class UtilidadesHabilidad {
                                            Habilidad habilidadEmisor){
 
 
+        List<Item> ListaEmisor = new ArrayList<>();
+        for (Item i : emisor.getEquipamiento()){
+            ListaEmisor.add(i);
+        }
 
 
-            if (emisor.getNivel() < 18 ){
+        List<Item> ListaReceptor = new ArrayList<>();
+        for (Item i : receptor.getEquipamiento()){
+            ListaReceptor.add(i);
+        }
+
+
+
+            while (emisor.getNivel() < 18 ){
                 levelUp(emisor);
             }
-            else
-                levelDown(emisor);
-
-            if (receptor.getNivel() < 18 ){
+            while (emisor.getNivel() > 18 ){
+            levelDown(emisor);
+            }
+            while (receptor.getNivel() < 18 ){
                 levelUp(receptor);
             }
-            else
+            while (receptor.getNivel() > 18 ){
                 levelDown(receptor);
-
+            }
             if (!emisor.getEquipamiento().isEmpty()){
-                for (Item i : emisor.getEquipamiento()){
+                for (Item i : ListaEmisor){
                     equiparItem(emisor, i);
                 }
+
             }
 
             if (!receptor.getEquipamiento().isEmpty()){
@@ -88,11 +101,11 @@ public class UtilidadesHabilidad {
                 }
             }
 
-            Double DanioHabilidadTotal = habilidadEmisor.getdanioBase() + (0.2 + emisor.getAtaqueBase() - (0.1 + receptor.getDefensa()));
+            Double DanioHabilidadTotal = habilidadEmisor.getdanioBase() + (0.2 * emisor.getAtaqueBase() - (0.1 * receptor.getDefensa()));
 
             emisor.setMana(emisor.getMana() - habilidadEmisor.getCosteMana());
 
-            receptor.setVida(receptor.getVida() - habilidadEmisor.getdanio());
+            receptor.setVida(receptor.getVida() - habilidadEmisor.getdanioBase());
 
     }
 
